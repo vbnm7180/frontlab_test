@@ -11,7 +11,7 @@ window.onload = function() {
                 item.className = "list__block";
                 item.innerHTML = "<div class=\"list__item\"><img class=\"item__image\" src=\"" + user.picture.medium + "\"><div class=\"item__name\">" + user.name.title.toUpperCase() + " " + user.name.first.toUpperCase() + " " + user.name.last.toUpperCase() + "</div></div>";
 
-                item.innerHTML = item.innerHTML + "<div class=\"popup\"><div class=\"popup__header\"><img src=\"images/cancel.svg\" class=\"exit\"></div><div class=\"popup__content\"><img src=\"" + user.picture.large + "\" class=\"popup__image\"><div class=\"popup__info\"><div class=\"popup__street\">Street: " + user.location.street.toUpperCase() + "</div><br><div class=\"popup__city\">City: " + user.location.city.toUpperCase() + "</div><br><div class=\"popup__state\">State: " + user.location.state.toUpperCase() + "</div><br><div class=\"popup__mail\">Email: " + user.email + "</div><br><div class=\"popup__phone\">Phone: " + user.phone + "</div><br></div></div></div>";
+                item.innerHTML = item.innerHTML + "<div class=\"popup\"><div class=\"popup__header\"><img src=\"images/cancel.svg\" class=\"exit\"></div><div class=\"popup__content\"><img src=\"" + user.picture.large + "\" class=\"popup__image\"><div class=\"popup__info\"><div class=\"popup__street\">STREET: " + user.location.street.toUpperCase() + "</div><div class=\"popup__city\">CITY: " + user.location.city.toUpperCase() + "</div><div class=\"popup__state\">STATE: " + user.location.state.toUpperCase() + "</div><div class=\"popup__mail\">EMAIL: " + user.email + "</div><div class=\"popup__phone\">PHONE: " + user.phone + "</div></div></div></div>";
 
                 document.querySelector(".list__container").appendChild(item);
 
