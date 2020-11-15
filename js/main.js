@@ -5,7 +5,6 @@ window.onload = function() {
         if (oAJAX.readyState == 4 && oAJAX.status == 200) {
             var data = JSON.parse(oAJAX.responseText);
             var users = data.results;
-            console.log(users);
             for (user of users) {
                 var item = document.createElement("div");
                 item.className = "list__block";
@@ -26,14 +25,6 @@ window.onload = function() {
 
 }
 
-/*
-document.querySelector(".list__container").onclick = function(e) {
-    if (e.target.className == 'list__item') {
-        console.log(1);
-    }
-}
-*/
-
 document.querySelector(".list__container").addEventListener('click', function(e) {
     if (e.target.closest(".list__item")) {
         e.target.closest(".list__item").nextSibling.style.display = "block";
@@ -48,25 +39,21 @@ document.querySelector(".list__container").addEventListener('click', function(e)
 
 document.querySelector(".sort__btn").addEventListener('click', function() {
     var list = document.querySelectorAll(".list__block");
-    //console.log(list);
     list = Array.from(list);
 
 
 
     if (document.querySelector(".sort__types").value == "1") {
         list.sort(function(a, b) {
-            //console.log(a.firstChild.textContent);
             if (a.firstChild.textContent > b.firstChild.textContent) return 1;
             else return -1;
         });
     } else {
         list.sort(function(a, b) {
-            //console.log(a.firstChild.textContent);
             if (a.firstChild.textContent < b.firstChild.textContent) return 1;
             else return -1;
         });
     }
-    console.log(list);
     var list__container = document.querySelector(".list__container").innerHTML;
     list__container = "";
     for (item of list) {
